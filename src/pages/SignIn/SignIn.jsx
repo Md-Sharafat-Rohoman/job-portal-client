@@ -1,6 +1,6 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import signInLottie from '../../../public/lottie/Login.json'
+import signInLottie from '../../../src/assets/lottie/Login.json'
 import Lottie from 'lottie-react';
 import SocielLogin from '../Home/SocielLogin';
 

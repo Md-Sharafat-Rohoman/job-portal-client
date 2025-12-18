@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "motion/react"
-import team1 from '../../../public/celebrate/team1.jpg'
-import team2 from '../../../public/celebrate/team2.jpg'
+import team1 from '../../../src/assets/celebrate/team1.jpg'
+import team2 from '../../../src/assets/celebrate/team1.jpg'
 
 const Bannar = () => {
     return (

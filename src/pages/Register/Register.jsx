@@ -1,5 +1,5 @@
 import React, { use } from 'react';
-import animationData from '../../../public/Register.json';
+import animationData from '../../../src/assets/lottie/Register.json';
 import Lottie from 'lottie-react';
 import { AuthContext } from '../../context/AuthContext';
 import SocielLogin from '../Home/SocielLogin';
