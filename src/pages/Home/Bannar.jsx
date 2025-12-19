@@ -5,7 +5,7 @@ import team2 from '../../../src/assets/celebrate/team1.jpg'
 
 const Bannar = () => {
     return (
-        <div className="hero bg-base-200 min-h-screen max-w-6xl mx-auto">
+        <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='flex-1'>
                     <motion.img
