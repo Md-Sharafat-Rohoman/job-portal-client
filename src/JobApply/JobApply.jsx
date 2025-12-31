@@ -1,14 +1,16 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { data, useParams } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import { Link } from 'react-router';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const JobApply = () => {
     const { id: jobId } = useParams();
     const { user } = useAuth();
     console.log(jobId, user)
 
-    const handleJobApply = e =>{
+    const handleJobApply = e => {
         e.preventDefault();
 
         const form = e.target;
@@ -16,6 +18,34 @@ const JobApply = () => {
         const github = form.github.value;
         const resume = form.resume.value;
         console.log(linkedIn, github, resume)
+
+        const application = {
+            jobId,
+            applicant: user.email,
+            linkedIn,
+            github,
+            resume,
+        }
+
+        axios.post('http://localhost:3000/application', application)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+
+
+
     }
     return (
         <div className='my-10 '>
